@@ -1,0 +1,91 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Others/Portal.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Green Portal Sprite Sheet.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 256, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 320, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 384, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 448, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 7.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 7.3807
+height = 27.7849
+
+[sub_resource type="Curve" id=11]
+_data = [ Vector2( 0.0428571, 0.977273 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.75 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=12]
+offsets = PoolRealArray( 0, 0.393162, 0.786325, 1 )
+colors = PoolColorArray( 0.13743, 0.980469, 0.0421295, 1, 0.336503, 0.818165, 0.0377502, 1, 0.949219, 0.655861, 0.033371, 1, 1, 0.728699, 0.0078125, 1 )
+
+[node name="Portal" type="AnimatedSprite"]
+position = Vector2( 0.307358, -3.6883 )
+scale = Vector2( 0.75, 0.75 )
+frames = SubResource( 9 )
+frame = 5
+playing = true
+script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -0.473343, 4.37107 )
+shape = SubResource( 10 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2( 0.819621, 4.0981 )
+amount = 20
+emission_shape = 2
+emission_rect_extents = Vector2( 1, 20 )
+gravity = Vector2( -100, 0 )
+initial_velocity = 20.0
+initial_velocity_random = 1.0
+angular_velocity = 10.0
+angular_velocity_random = 1.0
+linear_accel = 1.0
+linear_accel_random = 1.0
+radial_accel = 1.0
+radial_accel_random = 1.0
+tangential_accel = 2.0
+tangential_accel_random = 1.0
+damping = 1.0
+scale_amount_curve = SubResource( 11 )
+color_ramp = SubResource( 12 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

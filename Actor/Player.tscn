@@ -1,0 +1,325 @@
+[gd_scene load_steps=49 format=2]
+
+[ext_resource path="res://Resources/Booster sprite.png" type="Texture" id=1]
+[ext_resource path="res://Actor/Player.gd" type="Script" id=2]
+[ext_resource path="res://Others/particles.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Resources/ui/Pressed 23.png" type="Texture" id=4]
+[ext_resource path="res://Resources/ui/Levels.png" type="Texture" id=5]
+[ext_resource path="res://Actor/touch_screen_button.gd" type="Script" id=6]
+[ext_resource path="res://Resources/ui/Idle 27.png" type="Texture" id=7]
+[ext_resource path="res://Resources/ui/Pressed 27.png" type="Texture" id=8]
+[ext_resource path="res://Resources/ui/Pixellari.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Actor/pause.gd" type="Script" id=10]
+[ext_resource path="res://Resources/ui/player_input/Idle 13.png" type="Texture" id=12]
+[ext_resource path="res://Resources/ui/player_input/Pressed 2.png" type="Texture" id=13]
+[ext_resource path="res://Resources/ui/player_input/Close.png" type="Texture" id=14]
+[ext_resource path="res://Resources/ui/player_input/Pressed 15.png" type="Texture" id=15]
+[ext_resource path="res://Resources/ui/player_input/Idle 15.png" type="Texture" id=16]
+[ext_resource path="res://Resources/ui/player_input/Pressed 13.png" type="Texture" id=17]
+[ext_resource path="res://Resources/ui/player_input/Idle 14.png" type="Texture" id=18]
+[ext_resource path="res://Resources/ui/player_input/Pressed 14.png" type="Texture" id=19]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.963768 )
+colors = PoolColorArray( 0.818359, 0.508278, 0, 1, 0.996094, 0.889699, 0.0233459, 1 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 144, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 144, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 144, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 144, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 160, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 160, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 160, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 160, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 160, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 1 )
+region = Rect2( 80, 160, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 208, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 208, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 208, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 208, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 208, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "idle",
+"speed": 9.0
+}, {
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "run",
+"speed": 9.0
+}, {
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": false,
+"name": "jump_down",
+"speed": 1.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
+"loop": false,
+"name": "jump_start",
+"speed": 2.0
+} ]
+
+[sub_resource type="CircleShape2D" id=18]
+radius = 4.86397
+
+[sub_resource type="Curve" id=19]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=20]
+offsets = PoolRealArray( 0, 0.495726, 0.982906, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1, 0.992157, 0.992157, 0.984314, 0, 0.960938, 0.946453, 0.0375366, 0 )
+
+[sub_resource type="RectangleShape2D" id=21]
+
+[sub_resource type="RectangleShape2D" id=22]
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 7, 7 )
+
+[sub_resource type="DynamicFont" id=24]
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=25]
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=26]
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=27]
+font_data = ExtResource( 9 )
+
+[sub_resource type="RectangleShape2D" id=28]
+
+[sub_resource type="RectangleShape2D" id=29]
+
+[sub_resource type="RectangleShape2D" id=30]
+
+[node name="Player" type="KinematicBody2D"]
+collision_mask = 8
+script = ExtResource( 2 )
+
+[node name="particles" parent="." instance=ExtResource( 3 )]
+position = Vector2( -0.0608034, 7.30024 )
+scale = Vector2( 2, 2 )
+color_ramp = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 17 )
+animation = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.0661087, 3.53448 )
+shape = SubResource( 18 )
+
+[node name="flash" type="CPUParticles2D" parent="."]
+position = Vector2( 0.0602856, 2.71288 )
+scale = Vector2( 2, 2 )
+emitting = false
+amount = 100
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+direction = Vector2( 0, 0 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 50.0
+initial_velocity_random = 1.0
+damping = 100.0
+angle = 720.0
+angle_random = 1.0
+scale_amount_curve = SubResource( 19 )
+color_ramp = SubResource( 20 )
+hue_variation = 1.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 10.0
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( -0.196144, -0.196144 )
+enabled = true
+cast_to = Vector2( 0, 15 )
+collision_mask = 4
+
+[node name="gui" type="CanvasLayer" parent="."]
+script = ExtResource( 6 )
+
+[node name="right" type="TouchScreenButton" parent="gui"]
+position = Vector2( 93.7725, 0.667419 )
+normal = ExtResource( 18 )
+pressed = ExtResource( 19 )
+shape = SubResource( 21 )
+action = "move_right"
+
+[node name="left" type="TouchScreenButton" parent="gui"]
+position = Vector2( 74.895, -19.1539 )
+normal = ExtResource( 12 )
+pressed = ExtResource( 17 )
+shape = SubResource( 22 )
+action = "move_left"
+
+[node name="up" type="TouchScreenButton" parent="gui"]
+position = Vector2( 64.8663, 1.37532 )
+normal = ExtResource( 16 )
+pressed = ExtResource( 15 )
+shape = SubResource( 21 )
+action = "jump"
+
+[node name="pause" type="TouchScreenButton" parent="gui"]
+position = Vector2( 46.1068, 0.549435 )
+normal = ExtResource( 14 )
+pressed = ExtResource( 13 )
+shape = SubResource( 23 )
+action = "pause"
+
+[node name="scores" type="Node2D" parent="gui"]
+scale = Vector2( 0.8, 0.8 )
+
+[node name="lives" type="Label" parent="gui/scores"]
+margin_left = 0.566685
+margin_top = 13.3473
+margin_right = 40.5667
+margin_bottom = 27.3473
+custom_colors/font_color = Color( 0.811765, 0.890196, 0.270588, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 24 )
+text = "Lives:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lives_number" type="Label" parent="gui/scores"]
+margin_left = 41.7498
+margin_top = 13.3225
+margin_right = 81.7498
+margin_bottom = 27.3225
+custom_colors/font_color = Color( 0.811765, 0.890196, 0.270588, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 25 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coins" type="Label" parent="gui/scores"]
+margin_left = 0.68285
+margin_top = 0.197949
+margin_right = 40.6828
+margin_bottom = 14.1979
+custom_colors/font_color = Color( 0.811765, 0.890196, 0.270588, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 26 )
+text = "Coins:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coin_number" type="Label" parent="gui/scores"]
+margin_left = 42.1733
+margin_top = 0.197942
+margin_right = 82.1733
+margin_bottom = 14.1979
+custom_colors/font_color = Color( 0.811765, 0.890196, 0.270588, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 27 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="pause" type="Control" parent="CanvasLayer"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlackOverlay" type="ColorRect" parent="CanvasLayer/pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.67451 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pause_menu" type="Node2D" parent="CanvasLayer/pause"]
+position = Vector2( 126.961, 65.8315 )
+
+[node name="quit" type="TouchScreenButton" parent="CanvasLayer/pause/pause_menu"]
+position = Vector2( -6.961, -1.8315 )
+normal = ExtResource( 5 )
+pressed = ExtResource( 4 )
+shape = SubResource( 28 )
+action = "quit"
+
+[node name="restart" type="TouchScreenButton" parent="CanvasLayer/pause/pause_menu"]
+position = Vector2( -46.961, -1.8315 )
+normal = ExtResource( 7 )
+pressed = ExtResource( 8 )
+shape = SubResource( 29 )
+action = "restart"
+
+[node name="play" type="TouchScreenButton" parent="CanvasLayer/pause/pause_menu"]
+position = Vector2( 33.039, -1.8315 )
+normal = ExtResource( 18 )
+pressed = ExtResource( 19 )
+shape = SubResource( 30 )
+action = "pause"
